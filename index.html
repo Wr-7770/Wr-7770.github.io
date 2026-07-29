@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vault | Y796</title>
+<meta name="description" content="Vault - مجموعة أدوات خصوصية وأمان مجانية بواسطة Y796.">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --card:#141414;
+    --card-2:#1c1c1c;
+    --border:#2a2a2a;
+    --text:#ffffff;
+    --muted:#9a9a9a;
+    --accent-1:#f5a623;
+    --accent-2:#ff7a45;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI', Tahoma, system-ui, -apple-system, sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:24px 16px 40px;
+  }
+  .app{
+    width:100%;
+    max-width:460px;
+  }
+  .top-row{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:28px;
+  }
+  .lang-pill{
+    background:var(--card-2);
+    color:var(--muted);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:8px 18px;
+    font-size:14px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .lang-pill:hover{ color:var(--text); }
+
+  h1{
+    text-align:center;
+    font-size:44px;
+    font-weight:800;
+    margin:0 0 10px;
+    letter-spacing:0.5px;
+  }
+  .subtitle{
+    text-align:center;
+    color:var(--muted);
+    font-size:15px;
+    margin:0 0 36px;
+    line-height:1.6;
+    padding:0 8px;
+  }
+
+  .section-label{
+    color:var(--muted);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:1px;
+    margin:0 0 14px 4px;
+  }
+
+  .cards{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:32px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .card.disabled{
+    opacity:0.55;
+  }
+
+  .card-icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:var(--card-2);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .card-icon svg{ width:24px; height:24px; color:#fff; }
+
+  .card-body{
+    flex:1;
+    min-width:0;
+  }
+  .card-title{
+    font-size:17px;
+    font-weight:700;
+    margin:0 0 4px;
+  }
+  .card-desc{
+    font-size:13px;
+    color:var(--muted);
+    margin:0;
+    line-height:1.5;
+  }
+
+  .card-btn{
+    flex-shrink:0;
+    background:#fff;
+    color:#000;
+    border:none;
+    border-radius:10px;
+    padding:10px 18px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .card-btn.soon{
+    background:var(--card-2);
+    color:var(--muted);
+    border:1px solid var(--border);
+    cursor:default;
+  }
+
+  hr{
+    border:none;
+    border-top:1px solid var(--border);
+    margin:0 0 24px;
+  }
+
+  .footer-icons{
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    margin-bottom:14px;
+  }
+  .footer-icons a{
+    color:var(--muted);
+    display:flex;
+  }
+  .footer-icons a:hover{ color:var(--text); }
+  .footer-icons svg{ width:20px; height:20px; }
+
+  .made-by{
+    text-align:center;
+    color:#5a5a5a;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:600;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top-row">
+    <div class="lang-pill" id="langToggle">English</div>
+  </div>
+
+  <h1>Vault</h1>
+  <p class="subtitle" id="subtitle">مجموعة أدوات خصوصية وأمان، بسيطة وسريعة، تشتغل بالكامل داخل متصفحك بدون أي جمع بيانات.</p>
+
+  <p class="section-label" id="labelAvailable">الخدمات المتاحة</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+      </div>
+      <div class="card-body">
+        <p class="card-title">VaultGen</p>
+        <p class="card-desc" id="descGen">مولد كلمات مرور بمعايير أمنية عالمية</p>
+      </div>
+      <a class="card-btn" href="https://wr-7770.github.io/password-generator/" id="btnGen">فتح</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 14h2v2h-2zM14 19h2v2h-2zM19 19h2v2h-2z"/></svg>
+      </div>
+      <div class="card-body">
+        <p class="card-title">VaultQR</p>
+        <p class="card-desc" id="descQR">توليد رموز QR بمعايير احترافية</p>
+      </div>
+      <a class="card-btn" href="https://wr-7770.github.io/vaultqr/" id="btnQR">فتح</a>
+    </div>
+  </div>
+
+  <p class="section-label" id="labelSoon">قريبًا</p>
+  <div class="cards">
+    <div class="card disabled">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </div>
+      <div class="card-body">
+        <p class="card-title" id="soon1Title">خدمة جديدة</p>
+        <p class="card-desc" id="soon1Desc">قيد التطوير حاليًا</p>
+      </div>
+      <span class="card-btn soon" id="soonLabel1">قريبًا</span>
+    </div>
+
+    <div class="card disabled">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </div>
+      <div class="card-body">
+        <p class="card-title" id="soon2Title">خدمة جديدة</p>
+        <p class="card-desc" id="soon2Desc">قيد التطوير حاليًا</p>
+      </div>
+      <span class="card-btn soon" id="soonLabel2">قريبًا</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="footer-icons">
+    <a href="mailto:2800.XGB@proton.me" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7L22 6"/></svg>
+    </a>
+  </div>
+  <p class="made-by">MADE BY Y796</p>
+</div>
+
+<script>
+const langToggle = document.getElementById('langToggle');
+const htmlRoot = document.getElementById('htmlRoot');
+let currentLang = 'ar';
+
+const dict = {
+  ar: {
+    subtitle: 'مجموعة أدوات خصوصية وأمان، بسيطة وسريعة، تشتغل بالكامل داخل متصفحك بدون أي جمع بيانات.',
+    labelAvailable: 'الخدمات المتاحة',
+    labelSoon: 'قريبًا',
+    descGen: 'مولد كلمات مرور بمعايير أمنية عالمية',
+    descQR: 'توليد رموز QR بمعايير احترافية',
+    open: 'فتح',
+    soonTitle: 'خدمة جديدة',
+    soonDesc: 'قيد التطوير حاليًا',
+    soonBtn: 'قريبًا',
+    langPill: 'English'
+  },
+  en: {
+    subtitle: 'A small suite of privacy and security tools — simple, fast, and fully client-side, with no data collection.',
+    labelAvailable: 'Available services',
+    labelSoon: 'Coming soon',
+    descGen: 'Password generator with world-class security standards',
+    descQR: 'Professional-grade QR code generation',
+    open: 'Open',
+    soonTitle: 'New service',
+    soonDesc: 'Currently in development',
+    soonBtn: 'Soon',
+    langPill: 'العربية'
+  }
+};
+
+function applyLang(){
+  const t = dict[currentLang];
+  document.getElementById('subtitle').textContent = t.subtitle;
+  document.getElementById('labelAvailable').textContent = t.labelAvailable;
+  document.getElementById('labelSoon').textContent = t.labelSoon;
+  document.getElementById('descGen').textContent = t.descGen;
+  document.getElementById('descQR').textContent = t.descQR;
+  document.getElementById('btnGen').textContent = t.open;
+  document.getElementById('btnQR').textContent = t.open;
+  document.getElementById('soon1Title').textContent = t.soonTitle;
+  document.getElementById('soon1Desc').textContent = t.soonDesc;
+  document.getElementById('soon2Title').textContent = t.soonTitle;
+  document.getElementById('soon2Desc').textContent = t.soonDesc;
+  document.getElementById('soonLabel1').textContent = t.soonBtn;
+  document.getElementById('soonLabel2').textContent = t.soonBtn;
+  langToggle.textContent = t.langPill;
+
+  htmlRoot.setAttribute('lang', currentLang);
+  htmlRoot.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+}
+
+langToggle.addEventListener('click', () => {
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  applyLang();
+});
+</script>
+</body>
+</html>
