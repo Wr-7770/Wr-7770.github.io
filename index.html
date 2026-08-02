@@ -203,21 +203,21 @@
       </div>
       <a class="card-btn" href="https://wr-7770.github.io/vaultqr/" id="btnQR">فتح</a>
     </div>
+
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+      </div>
+      <div class="card-body">
+        <p class="card-title">VaultNote</p>
+        <p class="card-desc" id="descNote">ملاحظات مشفّرة تختفي بعد قراءة واحدة</p>
+      </div>
+      <a class="card-btn" href="https://wr-7770.github.io/vaultnote/" id="btnNote">فتح</a>
+    </div>
   </div>
 
   <p class="section-label" id="labelSoon">قريبًا</p>
   <div class="cards">
-    <div class="card disabled">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-      </div>
-      <div class="card-body">
-        <p class="card-title" id="soon1Title">خدمة جديدة</p>
-        <p class="card-desc" id="soon1Desc">قيد التطوير حاليًا</p>
-      </div>
-      <span class="card-btn soon" id="soonLabel1">قريبًا</span>
-    </div>
-
     <div class="card disabled">
       <div class="card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
@@ -252,6 +252,7 @@ const dict = {
     labelSoon: 'قريبًا',
     descGen: 'مولد كلمات مرور بمعايير أمنية عالمية',
     descQR: 'توليد رموز QR بمعايير احترافية',
+    descNote: 'ملاحظات مشفّرة تختفي بعد قراءة واحدة',
     open: 'فتح',
     soonTitle: 'خدمة جديدة',
     soonDesc: 'قيد التطوير حاليًا',
@@ -264,6 +265,7 @@ const dict = {
     labelSoon: 'Coming soon',
     descGen: 'Password generator with world-class security standards',
     descQR: 'Professional-grade QR code generation',
+    descNote: 'Encrypted notes that self-destruct after one read',
     open: 'Open',
     soonTitle: 'New service',
     soonDesc: 'Currently in development',
@@ -279,13 +281,12 @@ function applyLang(){
   document.getElementById('labelSoon').textContent = t.labelSoon;
   document.getElementById('descGen').textContent = t.descGen;
   document.getElementById('descQR').textContent = t.descQR;
+  document.getElementById('descNote').textContent = t.descNote;
   document.getElementById('btnGen').textContent = t.open;
   document.getElementById('btnQR').textContent = t.open;
-  document.getElementById('soon1Title').textContent = t.soonTitle;
-  document.getElementById('soon1Desc').textContent = t.soonDesc;
+  document.getElementById('btnNote').textContent = t.open;
   document.getElementById('soon2Title').textContent = t.soonTitle;
   document.getElementById('soon2Desc').textContent = t.soonDesc;
-  document.getElementById('soonLabel1').textContent = t.soonBtn;
   document.getElementById('soonLabel2').textContent = t.soonBtn;
   langToggle.textContent = t.langPill;
 
@@ -300,3 +301,4 @@ langToggle.addEventListener('click', () => {
 </script>
 </body>
 </html>
+ 
