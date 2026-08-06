@@ -214,19 +214,16 @@
       </div>
       <a class="card-btn" href="https://wr-7770.github.io/vaultnote/" id="btnNote">فتح</a>
     </div>
-  </div>
 
-  <p class="section-label" id="labelSoon">قريبًا</p>
-  <div class="cards">
-    <div class="card disabled">
+    <div class="card">
       <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
       </div>
       <div class="card-body">
-        <p class="card-title" id="soon2Title">خدمة جديدة</p>
-        <p class="card-desc" id="soon2Desc">قيد التطوير حاليًا</p>
+        <p class="card-title">VaultConvert</p>
+        <p class="card-desc" id="descConvert">ضغط وتحويل صيغ الصور بالكامل داخل متصفحك</p>
       </div>
-      <span class="card-btn soon" id="soonLabel2">قريبًا</span>
+      <a class="card-btn" href="https://wr-7770.github.io/vaultconvert/" id="btnConvert">فتح</a>
     </div>
   </div>
 
@@ -249,27 +246,21 @@ const dict = {
   ar: {
     subtitle: 'مجموعة أدوات خصوصية وأمان، بسيطة وسريعة، تشتغل بالكامل داخل متصفحك بدون أي جمع بيانات.',
     labelAvailable: 'الخدمات المتاحة',
-    labelSoon: 'قريبًا',
     descGen: 'مولد كلمات مرور بمعايير أمنية عالمية',
     descQR: 'توليد رموز QR بمعايير احترافية',
     descNote: 'ملاحظات مشفّرة تختفي بعد قراءة واحدة',
+    descConvert: 'ضغط وتحويل صيغ الصور بالكامل داخل متصفحك',
     open: 'فتح',
-    soonTitle: 'خدمة جديدة',
-    soonDesc: 'قيد التطوير حاليًا',
-    soonBtn: 'قريبًا',
     langPill: 'English'
   },
   en: {
     subtitle: 'A small suite of privacy and security tools — simple, fast, and fully client-side, with no data collection.',
     labelAvailable: 'Available services',
-    labelSoon: 'Coming soon',
     descGen: 'Password generator with world-class security standards',
     descQR: 'Professional-grade QR code generation',
     descNote: 'Encrypted notes that self-destruct after one read',
+    descConvert: 'Compress and convert image formats entirely in your browser',
     open: 'Open',
-    soonTitle: 'New service',
-    soonDesc: 'Currently in development',
-    soonBtn: 'Soon',
     langPill: 'العربية'
   }
 };
@@ -278,16 +269,14 @@ function applyLang(){
   const t = dict[currentLang];
   document.getElementById('subtitle').textContent = t.subtitle;
   document.getElementById('labelAvailable').textContent = t.labelAvailable;
-  document.getElementById('labelSoon').textContent = t.labelSoon;
   document.getElementById('descGen').textContent = t.descGen;
   document.getElementById('descQR').textContent = t.descQR;
   document.getElementById('descNote').textContent = t.descNote;
+  document.getElementById('descConvert').textContent = t.descConvert;
   document.getElementById('btnGen').textContent = t.open;
   document.getElementById('btnQR').textContent = t.open;
   document.getElementById('btnNote').textContent = t.open;
-  document.getElementById('soon2Title').textContent = t.soonTitle;
-  document.getElementById('soon2Desc').textContent = t.soonDesc;
-  document.getElementById('soonLabel2').textContent = t.soonBtn;
+  document.getElementById('btnConvert').textContent = t.open;
   langToggle.textContent = t.langPill;
 
   htmlRoot.setAttribute('lang', currentLang);
@@ -301,4 +290,3 @@ langToggle.addEventListener('click', () => {
 </script>
 </body>
 </html>
- 
